@@ -6,6 +6,9 @@ RUN useradd -ms /bin/bash app
 
 RUN apt-get -y update
 
+RUN apt-get install -y --fix-missing \
+    libsm6 libxext6
+
 USER app
 
 WORKDIR /home/app/src
