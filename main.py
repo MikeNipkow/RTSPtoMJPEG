@@ -1,9 +1,8 @@
 import logging
-import time
 from threading import Thread
 
-from flask_cors import CORS
 from flask import Response, app, Flask
+from flask_cors import CORS
 
 from objects.Camera import Camera
 from objects.Config import Config
@@ -37,4 +36,4 @@ if __name__ == "__main__":
     thread.start()
 
 while True:
-    time.sleep(1)
+    pass

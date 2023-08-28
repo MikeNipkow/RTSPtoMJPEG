@@ -47,6 +47,9 @@ class Camera:
                 success, frame = self.capture.read()
                 if success:
                     self.last_frame = frame
+                else:
+                    logging.warning("Failed to read image. Disconnecting...")
+                    self.disconnect()
 
                 cv2.waitKey(1)
 
@@ -59,7 +62,7 @@ class Camera:
         try:
             self.capture = cv2.VideoCapture(int(self.stream_link) + cv2.CAP_DSHOW)
         except ValueError:
-            self.capture = cv2.VideoCapture(self.stream_link)
+            self.capture = cv2.VideoCapture(self.stream_link )
 
         # Check if stream is reconnected.
         if self.is_connected():
