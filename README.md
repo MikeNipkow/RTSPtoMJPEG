@@ -1,4 +1,10 @@
 # RTSPtoMJPEG
-sudo docker build -t rtsptomjpeg .
+Python project to convert a rtsp stream to mjpeg using opencv.
 
-Run the container with: sudo docker run -p 8080:8080 -v ${PWD}:/home/app/src rtsptomjpeg
+# Installation
+## Docker
+Build the image:
+```docker build -t rtsptomjpeg .```
+
+Run the container: 
+```docker run -p 8080:8080 -v ${PWD}:/home/app/src rtsptomjpeg```
